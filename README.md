@@ -41,3 +41,31 @@
 * Build Mockup WireFrame
 * Find Content to Fill the page
 * Write word content
+
+## Wireframe
+[Link to Google Draw project](https://docs.google.com/drawings/d/1yFRRmyZPcDGFpp_OiTwjbe65fXddZAPjOWDR_phBDqQ/edit)
+
+Home
+![Home wire frame](img/home.png)
+Registration
+![registration wire frame](img/registration.png)
+About Us
+![About us wire frame](img/about_us.png)
+
+## User Stories
+[link to meeting minutes document](https://docs.google.com/document/d/1TAA8ZmYki5M_oFUK_o9NOZUnQKBZGLTvyDg8M9N15M0/edit)
+1. As a Philipino Nurse, I want a community of American immigrant Philipino nurses I can connect with, so that we can have support and create an environment for us to complete continued education and socialization
+  * Reference: homepage, website
+2. As a Philipino nurse, I want to be able to register via a standard form so I can connect with other Philipino nurses in my local community
+  * References: form
+3. s a user, I want to see a members list table that shows other nurses that have already registered on the website so I can make connections with them
+  * References: table with members list
+4. As a user I want to be able to find community events via a community event calendar (stretch goal) or links to social media
+  * References: social media and calendar (stretch goal)
+5. As a user I want to be able to connect with others who share my background by having information on the site about regions from the Philippines other American immigrant nurses are from 
+  * Reference: specific in form, specifics in members list table, homepage, website
+
+## Domain Modeling
+[link to lucid board](https://lucid.app/lucidchart/47f885e8-173f-49c3-b82f-0579baa63eb9/edit?docId=47f885e8-173f-49c3-b82f-0579baa63eb9&shared=true&page=0_0#?folder_id=home&browser=icon)
+
+![domain model](img/Domain_Model.png)
