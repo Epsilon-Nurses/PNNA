@@ -45,11 +45,16 @@
 ## Wireframe
 [Link to Google Draw project](https://docs.google.com/drawings/d/1yFRRmyZPcDGFpp_OiTwjbe65fXddZAPjOWDR_phBDqQ/edit)
 
-Home
+### Home
+
 ![Home wire frame](img/home.png)
-Registration
+
+### Registration
+
 ![registration wire frame](img/registration.png)
-About Us
+
+### About Us
+
 ![About us wire frame](img/about_us.png)
 
 ## User Stories
