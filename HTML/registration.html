@@ -1,57 +1,78 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><img src="https://via.placeholder.com/200x70"></li>
-                    <li>Nav Item 1</li>
-                    <li>Nav Item 2</li>
-                    <li>Nav Item 3</li>
-                    <li>Nav Item 4</li>
-                </ul>
-            </nav>
-        </header>
-    <main>
-        <body>
-            <div id="section_1">
-            </div>  
-            <div>
-                    <p> can you just build divs?</p>
-                    <p> Storage is passing?</p>
-                    <p> Constructor for object?</p>
-                    <a href="test.html">Test</a>
-                    <p> Task?</p>
-                    <p> Task?</p>
-                    <p> Task?</p>
-                    <p> Task?</p>
-            </div>
-            <form id="test-form">
-                <fieldset>
-                  <label>
-                    Store Location
-                      <input type="text" name="location" id="Location">
-                  </label>
-                  <label>
-                    Mininmum Customers
-                      <input type="text" name="minCustomers" id ="Mininmum Customer">
-                  </label>
-                  <label>
-                    Maximum Customes
-                      <input type="text" name="maxCustomers" id="Maximum Customer">
-                  </label>
-                  <label>
-                    Average Cookie Sales
-                      <input type="text" name="avgCustsale" id="Average Cookie Sales">
-                  </label>
-                </fieldset>
-                <button type="submit">Submit Form</button>
-              </form>
-            <script src="tool_kit.js"></script>
-        </body>
+<head>
+
+
+</head>
+
+<body>
+<main>
+<form id="registration-form">
+  <fieldset>
+    <div>
+      <label>Name
+        <input type="text" name="nurseName">
+      </label>
+    </div>
+    <div>
+      <label>Title
+        <select name="titles">
+          <option value="DR">DR</option>
+          <option value="CNA">CNA</option>
+            <option value="LPN">LPN/LVN</option>
+            <option value="RN">RN</option>
+            <option value="NP">NP</option>
+            <option value="CNM">CNM</option>
+            <option value="CRNA">CRNW</option>
+            <option value="CNM">CNM</option>
+            <option value="CRNA">CRNA</option>
+            <option value="DNP">DNP</option>
+          </select>
+      </label>
+    </div>
+
+    <div>
+      <label>Email
+        <input type="email" name="email">
+      </label>
+    </div>
+    <div>
+      <label>City of Origin
+        <input type="text" name="cityOfOrg">
+      </label>
+    </div>
+    <div>
+      <label>Certifications & Job Skills
+        <input type="text" name="certsJobsSkills">
+      </label>
+    </div>
+    <div>
+      <label>Current Organization
+        <input type="text" name="currentOrg">
+      </label>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </fieldset>
+</form>
+
+
+
+
+<section>
+  <table>
+    <tbody id="table-body"></tbody>
+  </table>
+</section>
+
+
+
+       
     </main>
+    
+  <script src = "/JS/app.js"></script> 
+  <script src= "/JS/toolkit.js"></script>
+</body>
 </html>
 
 

@@ -39,46 +39,46 @@
 // inside FancyKat has an objects is the list of variable given functions so past 3D dimensional arrays from there are hard to track
 // when in doublt make a Kitten and hand him to FancyKat
 // Element Kitten Constructor
-var elementKit = function() {
-  // Fill this with all the elements we will be using for later call functions
-    this.size = 'section'; // These are the elements that exist
-    this.value = 'tbody';// These are the elements we will make
-  };
-// Test Area
-var baseElement = document.getElementById("section_1")
-var newElement = document.createElement("section")
-console.log("test")
-// How many times do we wanna fill this array
-/
-displayList(baseElement, newElement)
-    ////// Function to Display Images
-    function displayList(first_element, second_element) {      // Interacts with function chartGenerator
-      second_element.textContent = "Test Test Test"
-      console.log(second_element)
-      first_element.appendChild(second_element);
-      // h2Element.appendChild(ulElement);
-  // for (var i = 0; i < CatalogImage.allImages.length; i++) {
-  //       var liElement = document.createElement('li');
-  //       ulElement.appendChild(liElement);
-    }
-// For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
-    function changeInputType(oldObject, oType) {
-      var newObject = document.createElement('input');
-      newObject.type = oType;
-      if(oldObject.size) newObject.size = oldObject.size; // How many times we wanna do this
-      if(oldObject.value) newObject.value = oldObject.value; // What's the new Value
-      if(oldObject.name) newObject.name = oldObject.name; // What's the new name
-      if(oldObject.id) newObject.id = oldObject.id; // New id
-      if(oldObject.className) newObject.className = oldObject.className; // New Class
-      oldObject.parentNode.replaceChild(newObject,oldObject); // Changes new to Old and 
-      return newObject;
-    }
-      function myFunction() {
-        var x = document.createElement("INPUT");
-        x.setAttribute("type", "text");
-        x.setAttribute("value", "Hello World!");
-        document.body.appendChild(x);
-      }
+// var elementKit = function() {
+//   // Fill this with all the elements we will be using for later call functions
+//     this.size = 'section'; // These are the elements that exist
+//     this.value = 'tbody';// These are the elements we will make
+//   };
+// // Test Area
+// var baseElement = document.getElementById("section_1")
+// var newElement = document.createElement("section")
+// console.log("test")
+// // How many times do we wanna fill this array
+// /
+// displayList(baseElement, newElement)
+//     ////// Function to Display Images
+//     function displayList(first_element, second_element) {      // Interacts with function chartGenerator
+//       second_element.textContent = "Test Test Test"
+//       console.log(second_element)
+//       first_element.appendChild(second_element);
+//       // h2Element.appendChild(ulElement);
+//   // for (var i = 0; i < CatalogImage.allImages.length; i++) {
+//   //       var liElement = document.createElement('li');
+//   //       ulElement.appendChild(liElement);
+//     }
+// // For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
+//     function changeInputType(oldObject, oType) {
+//       var newObject = document.createElement('input');
+//       newObject.type = oType;
+//       if(oldObject.size) newObject.size = oldObject.size; // How many times we wanna do this
+//       if(oldObject.value) newObject.value = oldObject.value; // What's the new Value
+//       if(oldObject.name) newObject.name = oldObject.name; // What's the new name
+//       if(oldObject.id) newObject.id = oldObject.id; // New id
+//       if(oldObject.className) newObject.className = oldObject.className; // New Class
+//       oldObject.parentNode.replaceChild(newObject,oldObject); // Changes new to Old and 
+//       return newObject;
+//     }
+//       function myFunction() {
+//         var x = document.createElement("INPUT");
+//         x.setAttribute("type", "text");
+//         x.setAttribute("value", "Hello World!");
+//         document.body.appendChild(x);
+//       }
 // // Make a Form for later
 // function populateForm() { // COMPLETED TO MAKE VALUES ASSOCIATE WITH THE NAME
 //     //TODO: Add an <option> tag inside the form's select for each product
