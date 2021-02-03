@@ -74,3 +74,7 @@
 [link to lucid board](https://lucid.app/lucidchart/47f885e8-173f-49c3-b82f-0579baa63eb9/edit?docId=47f885e8-173f-49c3-b82f-0579baa63eb9&shared=true&page=0_0#?folder_id=home&browser=icon)
 
 ![domain model](img/Domain_Model.png)
+
+## Admin Domain Modeling
+
+![admin page domain model](img/admin_domain.png)
