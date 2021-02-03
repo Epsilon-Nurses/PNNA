@@ -11,7 +11,7 @@
 // ////////////////////////////////////////////////////////////////////////////////////////////////
 //     ///////////////////////////////////////////////////////////////////////////////////////
 //                              var fancyKat = new FancyKat([]) 
-//                               //                    /\__/\                      
+                              //                    /\__/\                      
                              // This is Fancy Kat \( ",," )/ General options
                             // are made to into this and stored as object array to be
                             //stored and retreive YOU CAN COUNT ON FANCY KAT 
@@ -48,47 +48,12 @@ var FancyKat = function (members) { // Connects to Prototype
     this.members = members
 
   }; // We only call FancyKat for commands
-  
-//   var register = new FancyKat([])   // Full Registration for membership Page
-
-
-  
 
 ///// Stores in FancyKat for local storage
 FancyKat.prototype.storeMembership = function(object) {
     
     this.members.push(object)
 };
-
-
-/// Stores Catalog Information
-function storeDataKit(categoryName, object) { // categoryName is List Name in local storage and object is an object
-    var stringObject = JSON.stringify(object);
-    localStorage.setItem(categoryName, stringObject);
-    }
- 
-
-
-///// Fetchs Catalog Infromation
-function retrieveDataKit(categoryName) { // categoryName is the List Name in local storage
-    var reObjectify = localStorage.getItem(categoryName);
-    if (reObjectify === null) {
-        return null
-    }
-    var productsFromStorage = JSON.parse(reObjectify);
-    return productsFromStorage;
-}
-
-///// Membership Constructor
-var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, currentCity) {
-    this.objectInfo = ['Name', 'Title', 'Email', 'City of Origin', 'Occupation', 'Location', 'Current Orginzation']
-    this.nurseName = nurseName
-    this.titles = titles
-    this.email = email
-    this.cityOrgin = cityOrgin
-    this.education = education
-    this.currentCity = currentCity
-}
 
 ///// For filling up tables and appending
 var LanguageKitten = function() {
@@ -99,7 +64,7 @@ var LanguageKitten = function() {
     this.heading = "th"
     this.tableData = "td"
 }
-var languageKit = new LanguageKitten()
+var languageKit = new LanguageKitten() // Creating LanguageKit
 
 
 ///// Converts Objects to us DOM Method
@@ -151,8 +116,33 @@ function refresh_table(){
     tableBody.innerHTML = ""
   }
 
+/// Stores Catalog Information
+function storeDataKit(categoryName, object) { // categoryName is List Name in local storage and object is an object
+    var stringObject = JSON.stringify(object);
+    localStorage.setItem(categoryName, stringObject);
+    }
 
-// For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
+///// Fetchs Catalog Infromation
+function retrieveDataKit(categoryName) { // categoryName is the List Name in local storage
+    var reObjectify = localStorage.getItem(categoryName);
+    if (reObjectify === null) {
+        return null
+    }
+    var productsFromStorage = JSON.parse(reObjectify);
+    return productsFromStorage;
+}
+
+///// Membership Constructor
+var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, currentCity) {
+    this.objectInfo = ['Name', 'Title', 'Email', 'City of Origin', 'Occupation', 'Location', 'Current Orginzation']
+    this.nurseName = nurseName
+    this.titles = titles
+    this.email = email
+    this.cityOrgin = cityOrgin
+    this.education = education
+    this.currentCity = currentCity
+}
+///// For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
     function changeInputType(oldObject, oType) {
       var newObject = document.createElement('input');
       newObject.type = oType;
