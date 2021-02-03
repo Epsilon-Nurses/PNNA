@@ -21,7 +21,7 @@ for (var i=0; i<  register.length; i++){
 ///// Button Click Event
 button.addEventListener("click",function(event) {
 event.preventDefault()
-refresh_table()
+refresh_table('table-body')
 console.log("refresh")
 
 var sortedList = [] // Objects

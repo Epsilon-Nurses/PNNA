@@ -111,9 +111,9 @@ function tableData(kitten) {
 }
 
 ///// Table Refresh
-function refresh_table(){
-    var tableBody = document.getElementById('table-body');
-    tableBody.innerHTML = ""
+function refresh_table(elementID){
+    var elementCleaner = document.getElementById(elementID);
+    elementCleaner.innerHTML = ""
   }
 
 /// Stores Catalog Information
@@ -155,7 +155,22 @@ var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, cur
       return newObject;
     }
 
+   ////// Function to Display Images
+   function displayList(elementID, textToShow) {      // Interacts with function chartGenerator
+    var requiredId = document.getElementById(elementID)
+    var element = document.createElement('button')
+    
+    element.textContent= textToShow
+    requiredId.appendChild(element)
+}
 
+
+// ///// Confirmation button event
+// var confirmMsg = document.getElementById('confirmation')
+// confirmMsg.addEventListener('click', function (event) {
+//     event.preventDefault();
+//     refresh_table('confirmation')
+// })
 
 
 
