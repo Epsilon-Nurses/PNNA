@@ -47,8 +47,8 @@
 var formElement = document.getElementById('registration-form')
 
 ///// FancyKat stores your objects for you
-var FancyKat = function (kittenBox) { // Connects to Prototype
-    this.members = kittenBox
+var FancyKat = function (members) { // Connects to Prototype
+    this.members = members
 
   }; // We only call FancyKat for commands
   
@@ -65,12 +65,11 @@ FancyKat.prototype.storeMembership = function(object) {
 
 
 /// Stores Catalog Information
-function storeDataKit(categoryName, objectArray) { // categoryName is List Name in local storage and object is an object
-    for (var i=0; objectArray.length; i++){
+function storeDataKit(categoryName, object) { // categoryName is List Name in local storage and object is an object
     var stringObject = JSON.stringify(object);
     localStorage.setItem(categoryName, stringObject);
     }
-    }
+ 
 
 
 ///// Fetchs Catalog Infromation
@@ -82,6 +81,7 @@ function retrieveDataKit(categoryName) { // categoryName is the List Name in loc
     var productsFromStorage = JSON.parse(reObjectify);
     return productsFromStorage;
 }
+
 
 
 

@@ -1,20 +1,17 @@
 'use strict';
 
-
 var register = new FancyKat([])
-
-
 ///// Fetches store Data of the membership
 if (retrieveDataKit("Nurse Members List") !== null) {      // Checks Data for storage  members cache 
-
     var recenetMembers = retrieveDataKit("Nurse Members List")
-        console.log(recenetMembers, "From Storage")
-
-    for (var i= 0; i < recenetMembers.length; i++){
+        console.log(recenetMembers.members, "From Storage")
+    for (var i= 0; i < recenetMembers.members.length; i++){
         var membersList = recenetMembers.members[i]
-        register.storeDataKit(membersList)
-    }
+
+        register.storeMembership(membersList)
+    } 
 }
+console.log(register)
 
 ///// Event Listner to take information from the submmission
 formElement.addEventListener('submit', function (event) {
@@ -33,7 +30,7 @@ formElement.addEventListener('submit', function (event) {
     
     //// Pushed is to FancyKat Storage
     register.storeMembership(nurseMemberShip)
-
+    console.log(register)
     storeDataKit("Nurse Members List", register)
     
     if (register.members.length <= 1){
