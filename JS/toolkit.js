@@ -3,15 +3,15 @@
     //////////////////////// OBJECT BUILDER BEWARE OF FLYING OJECTS ////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
             ////////// WARNING ////////// Global Maker ////////// WARNING ////////// 
-                        var FancyKat = function(filePath, name) {
-                        this.filePath = filePath;
-                        this.name = name;
-                        // Product.allProducts.push(this);
-                      }; // We only call FancyKat for commands
-////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////
-                             var fancyKat = new FancyKat([]) 
-                              //                    /\__/\                      
+//                         var FancyKat = function(filePath, name) {
+//                         this.filePath = filePath;
+//                         this.name = name;
+//                         // Product.allProducts.push(this);
+//                       }; // We only call FancyKat for commands
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+//     ///////////////////////////////////////////////////////////////////////////////////////
+//                              var fancyKat = new FancyKat([]) 
+//                               //                    /\__/\                      
                              // This is Fancy Kat \( ",," )/ General options
                             // are made to into this and stored as object array to be
                             //stored and retreive YOU CAN COUNT ON FANCY KAT 
@@ -39,6 +39,198 @@
 // inside FancyKat has an objects is the list of variable given functions so past 3D dimensional arrays from there are hard to track
 // when in doublt make a Kitten and hand him to FancyKat
 // Element Kitten Constructor
+
+
+///// Global Variables
+
+///// FancyKat stores your objects for you
+var FancyKat = function (members) { // Connects to Prototype
+    this.members = members
+
+  }; // We only call FancyKat for commands
+  
+//   var register = new FancyKat([])   // Full Registration for membership Page
+
+
+  
+
+///// Stores in FancyKat for local storage
+FancyKat.prototype.storeMembership = function(object) {
+    
+    this.members.push(object)
+};
+
+
+/// Stores Catalog Information
+function storeDataKit(categoryName, object) { // categoryName is List Name in local storage and object is an object
+    var stringObject = JSON.stringify(object);
+    localStorage.setItem(categoryName, stringObject);
+    }
+ 
+
+
+///// Fetchs Catalog Infromation
+function retrieveDataKit(categoryName) { // categoryName is the List Name in local storage
+    var reObjectify = localStorage.getItem(categoryName);
+    if (reObjectify === null) {
+        return null
+    }
+    var productsFromStorage = JSON.parse(reObjectify);
+    return productsFromStorage;
+}
+
+///// Membership Constructor
+var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, currentCity) {
+    this.objectInfo = ['Name', 'Title', 'Email', 'City of Origin', 'Occupation', 'Location', 'Current Orginzation']
+    this.nurseName = nurseName
+    this.titles = titles
+    this.email = email
+    this.cityOrgin = cityOrgin
+    this.education = education
+    this.currentCity = currentCity
+}
+
+///// For filling up tables and appending
+var LanguageKitten = function() {
+    this.bodyCat = "body"
+    this.tableId = "table-body"
+    this.tableBody= 'tbody'
+    this.tableRow = "tr"
+    this.heading = "th"
+    this.tableData = "td"
+}
+var languageKit = new LanguageKitten()
+
+
+///// Converts Objects to us DOM Method
+function tableHeader(kitten) {
+    var tableBody = document.getElementById(languageKit.tableId);
+    var tableRow = document.createElement(languageKit.tableRow)
+
+
+
+    for (var i= 0; i < kitten.objectInfo.length;  i++){
+        var heading = document.createElement(languageKit.heading)
+        heading.textContent = kitten.objectInfo[i]
+        tableRow.appendChild(heading)
+    }
+        tableBody.appendChild(tableRow);
+}
+
+///// Table Data for Members
+function tableData(kitten) {
+    var tableBody = document.getElementById(languageKit.tableId);
+    var tableRow = document.createElement(languageKit.tableRow)
+
+                var tableData = document.createElement(languageKit.tableData)
+                tableData.textContent = kitten.nurseName
+                tableRow.appendChild(tableData)
+                var tableData = document.createElement(languageKit.tableData)
+                tableData.textContent = kitten.titles
+                tableRow.appendChild(tableData)
+                var tableData = document.createElement(languageKit.tableData)
+                tableData.textContent = kitten.email
+                tableRow.appendChild(tableData)
+                var tableData = document.createElement(languageKit.tableData)
+                tableData.textContent = kitten.cityOrgin
+                tableRow.appendChild(tableData)
+                var tableData = document.createElement(languageKit.tableData)
+                tableData.textContent = kitten.education
+                tableRow.appendChild(tableData)
+                var tableData = document.createElement(languageKit.tableData)
+                tableData.textContent = kitten.currentCity
+                tableRow.appendChild(tableData)
+    
+    tableBody.appendChild(tableRow);
+
+}
+
+///// Table Refresh
+function refresh_table(){
+    var tableBody = document.getElementById('table-body');
+    tableBody.innerHTML = ""
+  }
+
+
+// For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
+    function changeInputType(oldObject, oType) {
+      var newObject = document.createElement('input');
+      newObject.type = oType;
+      if(oldObject.size) newObject.size = oldObject.size; // How many times we wanna do this
+      if(oldObject.value) newObject.value = oldObject.value; // What's the new Value
+      if(oldObject.name) newObject.name = oldObject.name; // What's the new name
+      if(oldObject.id) newObject.id = oldObject.id; // New id
+      if(oldObject.className) newObject.className = oldObject.className; // New Class
+      oldObject.parentNode.replaceChild(newObject,oldObject); // Changes new to Old and 
+      return newObject;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // var elementKit = function() {
 //   // Fill this with all the elements we will be using for later call functions
 //     this.size = 'section'; // These are the elements that exist
