@@ -89,7 +89,7 @@ function retrieveDataKit(categoryName) { // categoryName is the List Name in loc
 
 ///// Membership Constructor
 var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, currentCity) {
-    this.objectInfo = ['Name', 'Title', 'Email', 'City of Origin', 'Occupation', 'Location', 'Current Orginzation' ]
+    this.objectInfo = ['Name', 'Title', 'Email', 'City of Origin', 'Occupation', 'Location', 'Current Orginzation']
     this.nurseName = nurseName
     this.titles = titles
     this.email = email
@@ -98,7 +98,7 @@ var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, cur
     this.currentCity = currentCity
 }
 
-
+///// For filling up tables and appending
 var LanguageKitten = function() {
     this.bodyCat = "body"
     this.tableId = "table-body"
@@ -108,54 +108,56 @@ var LanguageKitten = function() {
     this.tableData = "td"
 }
 var languageKit = new LanguageKitten()
-console.log(LanguageKitten)
 
 
 ///// Converts Objects to us DOM Method
 function tableHeader(kitten) {
-    console.log(kitten)
     var tableBody = document.getElementById(languageKit.tableId);
     var tableRow = document.createElement(languageKit.tableRow)
+
+
 
     for (var i= 0; i < kitten.objectInfo.length;  i++){
         var heading = document.createElement(languageKit.heading)
         heading.textContent = kitten.objectInfo[i]
         tableRow.appendChild(heading)
     }
-    console.log(tableBody)
         tableBody.appendChild(tableRow);
 }
 
 ///// Table Data for Members
-function tableData(membersInformation) {
+function tableData(kitten) {
     var tableBody = document.getElementById(languageKit.tableId);
     var tableRow = document.createElement(languageKit.tableRow)
-    console.log(membersInformation)
 
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = membersInformation.nurseName
+                tableData.textContent = kitten.nurseName
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = membersInformation.titles
+                tableData.textContent = kitten.titles
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = membersInformation.email
+                tableData.textContent = kitten.email
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = membersInformation.cityOrgin
+                tableData.textContent = kitten.cityOrgin
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = membersInformation.education
+                tableData.textContent = kitten.education
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = membersInformation.currentCity
+                tableData.textContent = kitten.currentCity
                 tableRow.appendChild(tableData)
     
     tableBody.appendChild(tableRow);
 
 }
 
-
+///// Table Refresh
+function refresh_table(){
+    var tableBody = document.getElementById('table-body');
+    tableBody.innerHTML = ""
+  }
 
 
 // For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
