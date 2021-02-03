@@ -40,11 +40,8 @@
 // when in doublt make a Kitten and hand him to FancyKat
 // Element Kitten Constructor
 
-// var kittenBox = []
-// console.log(kittenBox)
 
 ///// Global Variables
-var formElement = document.getElementById('registration-form')
 
 ///// FancyKat stores your objects for you
 var FancyKat = function (members) { // Connects to Prototype
@@ -81,11 +78,6 @@ function retrieveDataKit(categoryName) { // categoryName is the List Name in loc
     var productsFromStorage = JSON.parse(reObjectify);
     return productsFromStorage;
 }
-
-
-
-
-///// Stores one Item into FancyKat to store later
 
 ///// Membership Constructor
 var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, currentCity) {

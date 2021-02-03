@@ -1,6 +1,7 @@
 'use strict';
 
 var register = new FancyKat([])
+var formElement = document.getElementById('registration-form')
 
 ///// Fetches store Data of the membership
 if (retrieveDataKit("Nurse Members List") !== null) {      // Checks Data for storage  members cache 
