@@ -77,6 +77,7 @@ function tableHeader(kitten) {
     for (var i= 0; i < kitten.objectInfo.length;  i++){
         var heading = document.createElement(languageKit.heading)
         heading.textContent = kitten.objectInfo[i]
+        heading.setAttribute('id', kitten.objectInfo[i])
         tableRow.appendChild(heading)
     }
         tableBody.appendChild(tableRow);
@@ -155,13 +156,185 @@ var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, cur
       return newObject;
     }
 
-   ////// Function to Display Images
+////// Function to Display Images
    function displayList(elementID, textToShow) {      // Interacts with function chartGenerator
     var requiredId = document.getElementById(elementID)
     var element = document.createElement('button')
     
     element.textContent= textToShow
     requiredId.appendChild(element)
+}
+
+////// Function to sort Object Names
+function sortNames() {
+    var sortedList = [] // Objects
+    var namesArray = []  // Names for Identifier
+    var newSortedList = []
+    ///// Initializer
+    var membersList = retrieveDataKit("Nurse Members List")
+            console.log(membersList.members, "From Storage")
+        for (var i= 0; i < membersList.members.length; i++){
+            var nurse = membersList.members[i]
+            sortedList.push(nurse)
+            namesArray.push(nurse.nurseName)
+        }
+
+        namesArray.sort()
+        for (var i=0; i < namesArray.length; i++){
+        
+            for (var j=0; j < sortedList.length; j++) {
+                if (namesArray[i] === sortedList[j].nurseName){
+                newSortedList.push(sortedList[j])
+                break
+                }
+            }
+        }
+        return newSortedList
+}
+
+////// Function to sort Object Titles
+function sortTitles() {
+var sortedList = [] // Objects
+var namesArray = []  // Names for Identifier
+var titlesArray = []  
+var newSortedList = []
+///// Initializer
+var membersList = retrieveDataKit("Nurse Members List")
+        console.log(membersList.members, "From Storage")
+    for (var i= 0; i < membersList.members.length; i++){
+        var nurse = membersList.members[i]
+        sortedList.push(nurse)
+        namesArray.push(nurse.nurseName)
+        titlesArray.push(nurse.titles)
+    }
+
+    titlesArray.sort()
+    for (var i=0; i < titlesArray.length; i++){
+    
+        for (var j=0; j < sortedList.length; j++) {
+            if (titlesArray[i] === sortedList[j].titles && namesArray[i] === sortedList[j].nurseName){
+              newSortedList.push(sortedList[j])
+              break
+            }
+        }
+    }
+    return newSortedList
+}
+
+////// Function to sort Object Names
+function sortEmail() {
+var sortedList = [] // Objects
+var namesArray = []  // Names for Identifier
+var emailArray = [] 
+var newSortedList = []
+///// Initializer
+var membersList = retrieveDataKit("Nurse Members List")
+        console.log(membersList.members, "From Storage")
+    for (var i= 0; i < membersList.members.length; i++){
+        var nurse = membersList.members[i]
+        sortedList.push(nurse)
+        namesArray.push(nurse.nurseName)
+        emailArray.push(nurse.email)
+    }
+
+    emailArray.sort()
+    for (var i=0; i < emailArray.length; i++){
+    
+        for (var j=0; j < sortedList.length; j++) {
+            if (emailArray[i] === sortedList[j].email && namesArray[i] === sortedList[j].nurseName){
+              newSortedList.push(sortedList[j])
+              break
+            }
+        }
+    }
+    return newSortedList
+}
+
+////// Function to sort Object Names
+function sortCityOrigin() {
+var sortedList = [] // Objects
+var namesArray = []  // Names for Identifier
+var cityOrginArray = [] 
+var newSortedList = []
+///// Initializer
+var membersList = retrieveDataKit("Nurse Members List")
+        console.log(membersList.members, "From Storage")
+    for (var i= 0; i < membersList.members.length; i++){
+        var nurse = membersList.members[i]
+        sortedList.push(nurse)
+        namesArray.push(nurse.nurseName)
+        cityOrginArray.push(nurse.cityOrgin)
+    }
+
+    cityOrginArray.sort()
+    for (var i=0; i < cityOrginArray.length; i++){
+    
+        for (var j=0; j < sortedList.length; j++) {
+            if (cityOrginArray[i] === sortedList[j].cityOrgin && namesArray[i] === sortedList[j].nurseName){
+              newSortedList.push(sortedList[j])
+              break
+            }
+        }
+    }
+    return newSortedList
+}
+
+////// Function to sort Object Names
+function sortEducation() {
+    var sortedList = [] // Objects
+    var namesArray = []  // Names for Identifier
+    var educationArray = []
+    var newSortedList = []
+    ///// Initializer
+    var membersList = retrieveDataKit("Nurse Members List")
+            console.log(membersList.members, "From Storage")
+        for (var i= 0; i < membersList.members.length; i++){
+            var nurse = membersList.members[i]
+            sortedList.push(nurse)
+            namesArray.push(nurse.nurseName)
+            educationArray.push(nurse.education)
+        }
+
+        educationArray.sort()
+        for (var i=0; i < educationArray.length; i++){
+        
+            for (var j=0; j < sortedList.length; j++) {
+                if (educationArray[i] === sortedList[j].education && namesArray[i] === sortedList[j].nurseName){
+                newSortedList.push(sortedList[j])
+                break
+                }
+            }
+        }
+    return newSortedList
+}
+
+////// Function to sort Object Names
+function sortcurrentCity() {
+    var sortedList = [] // Objects
+    var namesArray = []  // Names for Identifier
+    var currentCityArray = [] 
+    var newSortedList = []
+    ///// Initializer
+    var membersList = retrieveDataKit("Nurse Members List")
+            console.log(membersList.members, "From Storage")
+        for (var i= 0; i < membersList.members.length; i++){
+            var nurse = membersList.members[i]
+            sortedList.push(nurse)
+            namesArray.push(nurse.nurseName)
+            currentCityArray.push(nurse.currentCity)
+        }
+
+        currentCityArray.sort()
+        for (var i=0; i < currentCityArray.length; i++){
+        
+            for (var j=0; j < sortedList.length; j++) {
+                if (currentCityArray[i] === sortedList[j].currentCity && namesArray[i] === sortedList[j].nurseName){
+                newSortedList.push(sortedList[j])
+                break
+                }
+            }
+        }
+        return newSortedList
 }
 
 
