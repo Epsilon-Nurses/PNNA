@@ -1,10 +1,8 @@
 "use strict"
 
 
-var button = document.getElementById("button");
-
 var register = []
-///// Initializer
+///// Initializer MUST BE AT THE TOP TO RENDER ANYTHING
 var membersList = retrieveDataKit("Nurse Members List")
     for (var i= 0; i < membersList.members.length; i++){
         var nurse = membersList.members[i]
@@ -13,46 +11,110 @@ var membersList = retrieveDataKit("Nurse Members List")
 tableHeader(register[0])
 for (var i=0; i<  register.length; i++){
     tableData(register[i])
+
 }
+
+var headSortName = document.getElementById("Name");
+var headSortTitle = document.getElementById("Title");
+var headSortEmail = document.getElementById("Email");
+var headSortCityOrigin = document.getElementById("City of Origin");
+var headSortEducation = document.getElementById("Occupation");
+var headSortCurrentCity = document.getElementById("Current Orginzation");
 
 
 
 
 ///// Button Click Event
-button.addEventListener("click",function(event) {
-event.preventDefault()
-refresh_table('table-body')
-console.log("refresh")
+headSortName.addEventListener("click",function(event) {
+    event.preventDefault()
+    refresh_table('table-body')
 
-var sortedList = [] // Objects
-var sortNames = []  // Names of the objects
-var newSortedList = []
-///// Initializer
-var membersList = retrieveDataKit("Nurse Members List")
-        console.log(membersList.members, "From Storage")
-    for (var i= 0; i < membersList.members.length; i++){
-        var nurse = membersList.members[i]
-        sortedList.push(nurse)
-        sortNames.push(nurse.nurseName)
+    var newSortedList = sortNames()
+
+    console.log(newSortedList)
+        
+    tableHeader(newSortedList[0])
+    for (var i=0; i<  newSortedList.length; i++){
+        tableData(newSortedList[i])
     }
+})
 
-    sortNames.sort()
-    for (var i=0; i < sortNames.length; i++){
-    
-        for (var j=0; j < sortedList.length; j++) {
-            if (sortNames[i] === sortedList[j].nurseName){
-              newSortedList.push(sortedList[j])
-              break
-            }
-        }
+///// Button Click Event
+headSortTitle.addEventListener("click",function(event) {
+    event.preventDefault()
+    refresh_table('table-body')
+
+    var newSortedList = sortTitles()
+
+    console.log(newSortedList)
+        
+    tableHeader(newSortedList[0])
+    for (var i=0; i<  newSortedList.length; i++){
+        tableData(newSortedList[i])
     }
+})
 
-    
-tableHeader(newSortedList[0])
-for (var i=0; i<  newSortedList.length; i++){
-    tableData(newSortedList[i])
-}
+///// Button Click Event
+headSortEmail.addEventListener("click",function(event) {
+    event.preventDefault()
+    refresh_table('table-body')
 
+    var newSortedList = sortEmail()
+
+
+    console.log(newSortedList)
+        
+    tableHeader(newSortedList[0])
+    for (var i=0; i<  newSortedList.length; i++){
+        tableData(newSortedList[i])
+    }
+})
+
+///// Button Click Event
+headSortCityOrigin.addEventListener("click",function(event) {
+    event.preventDefault()
+    refresh_table('table-body')
+
+
+    var newSortedList = sortCityOrigin()
+
+
+    console.log(newSortedList)
+        
+    tableHeader(newSortedList[0])
+    for (var i=0; i<  newSortedList.length; i++){
+        tableData(newSortedList[i])
+    }
+})
+
+///// Button Click Event
+headSortEducation.addEventListener("click",function(event) {
+    event.preventDefault()
+    refresh_table('table-body')
+
+    var newSortedList = sortEducation()
+
+    console.log(newSortedList)
+        
+    tableHeader(newSortedList[0])
+    for (var i=0; i<  newSortedList.length; i++){
+        tableData(newSortedList[i])
+    }
+})
+
+///// Button Click Event
+headSortCurrentCity.addEventListener("click",function(event) {
+    event.preventDefault()
+    refresh_table('table-body')
+
+  var newSortedList = sortcurrentCity()
+
+    console.log(newSortedList)
+        
+    tableHeader(newSortedList[0])
+    for (var i=0; i<  newSortedList.length; i++){
+        tableData(newSortedList[i])
+    }
 })
 
 
