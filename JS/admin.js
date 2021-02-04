@@ -1,5 +1,27 @@
 "use strict"
 
+///// Credentials
+
+var adminUser = prompt("Please input USERNAME")
+var passwordUser = prompt("Please input PASSWORD")
+var securityKit = new SecurityKitten(adminUser, passwordUser)
+
+
+    if (securityKit.admin === 'admin' && securityKit.password === "FANCYKAT") {
+            alert('Welcome back ' + securityKit.admin +'!')
+    }
+
+
+    while (securityKit.admin !== "admin" || securityKit.password !== "FANCYKAT") {
+        alert("Incorrect Credentials")
+        var adminUser = prompt("Please input USERNAME")
+        var passwordUser = prompt("Please input PASSWORD")
+        securityKit = new SecurityKitten(adminUser, passwordUser)
+    }
+
+
+
+
 
 var register = []
 ///// Initializer MUST BE AT THE TOP TO RENDER ANYTHING
@@ -18,6 +40,7 @@ var headSortEmail = document.getElementById("Email");
 var headSortCityOrigin = document.getElementById("City of Origin");
 var headSortEducation = document.getElementById("Occupation");
 var headSortCurrentCity = document.getElementById("Current Orginzation");
+
 
 
 ///// Button Click Event
