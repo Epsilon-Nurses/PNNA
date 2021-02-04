@@ -37,11 +37,12 @@ formElement.addEventListener('submit', function (event) {
       }
     }
 
-    console.log(register)
 ///// Double Registration Error Checker
 for (var j=0; j < register.members.length; j++) {
-    if (email === register.members[j].email && nurseName === register.members[j].nurseName){
+    if (email === register.members[j].email) {
         formElement.reset()   // Keeper in reset
+        console.log(register.members[j].email)
+        alert("Sorry that email has been used already")
         console.log("Doubles")
         return             
     }

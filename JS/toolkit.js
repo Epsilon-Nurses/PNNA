@@ -182,7 +182,7 @@ function sortNames() {
         }
 
         namesArray.sort()
-        for (var i=``; i < namesArray.length; i++){
+        for (var i=0; i < namesArray.length; i++){
         
             for (var j=0; j < sortedList.length; j++) {
                 if (namesArray[i] === sortedList[j].nurseName){
@@ -197,7 +197,8 @@ function sortNames() {
 ////// Function to sort Object Titles
 function sortTitles() {
 var sortedList = [] // Objects
-var titlesArray = []  
+var titlesArray = []
+var namesArray = []  // Names for Identifier
 var newSortedList = []
 ///// Initializer
 var membersList = retrieveDataKit("Nurse Members List")
@@ -206,13 +207,15 @@ var membersList = retrieveDataKit("Nurse Members List")
         var nurse = membersList.members[i]
         sortedList.push(nurse)
         titlesArray.push(nurse.titles)
-    }
+        namesArray.push(nurse.nurseName)
 
+    }
+    namesArray.sort()
     titlesArray.sort()
-    for (var i=1; i < titlesArray.length; i++){
+    for (var i=0; i < titlesArray.length; i++){
     
         for (var j=0; j < sortedList.length; j++) {
-            if (titlesArray[i] === sortedList[j].titles){
+            if (titlesArray[i] === sortedList[j].titles && namesArray[i] === sortedList[j].nurseName){
               newSortedList.push(sortedList[j])
               break
             }
@@ -236,7 +239,7 @@ var membersList = retrieveDataKit("Nurse Members List")
     }
 
     emailArray.sort()
-    for (var i=1; i < emailArray.length; i++){
+    for (var i=0; i < emailArray.length; i++){
     
         for (var j=0; j < sortedList.length; j++) {
             if (emailArray[i] === sortedList[j].email){
@@ -253,6 +256,7 @@ function sortCityOrigin() {
 var sortedList = [] // Objects
 var cityOrginArray = [] 
 var newSortedList = []
+var namesArray = []  // Names for Identifier
 ///// Initializer
 var membersList = retrieveDataKit("Nurse Members List")
         console.log(membersList.members, "From Storage")
@@ -260,13 +264,15 @@ var membersList = retrieveDataKit("Nurse Members List")
         var nurse = membersList.members[i]
         sortedList.push(nurse)
         cityOrginArray.push(nurse.cityOrgin)
-    }
+        namesArray.push(nurse.nurseName)
 
+    }
+    namesArray.sort()
     cityOrginArray.sort()
-    for (var i=1; i < cityOrginArray.length; i++){
+    for (var i=0; i < cityOrginArray.length; i++){
     
         for (var j=0; j < sortedList.length; j++) {
-            if (cityOrginArray[i] === sortedList[j].cityOrgin){
+            if (cityOrginArray[i] === sortedList[j].cityOrgin && namesArray[i] === sortedList[j].nurseName) {
               newSortedList.push(sortedList[j])
               break
             }
@@ -280,6 +286,7 @@ function sortEducation() {
     var sortedList = [] // Objects
     var educationArray = []
     var newSortedList = []
+    var namesArray = []  // Names for Identifier
     ///// Initializer
     var membersList = retrieveDataKit("Nurse Members List")
             console.log(membersList.members, "From Storage")
@@ -287,8 +294,10 @@ function sortEducation() {
             var nurse = membersList.members[i]
             sortedList.push(nurse)
             educationArray.push(nurse.education)
-        }
+            namesArray.push(nurse.nurseName)
 
+        }
+        namesArray.sort()
         educationArray.sort()
         for (var i=0; i < educationArray.length; i++){
         
@@ -315,12 +324,12 @@ function sortcurrentCity() {
             sortedList.push(nurse)
             currentCityArray.push(nurse.currentCity)
         }
-
+        namesArray.sort()
         currentCityArray.sort()
         for (var i=0; i < currentCityArray.length; i++){
         
             for (var j=0; j < sortedList.length; j++) {
-                if (currentCityArray[i] === sortedList[j].currentCity){
+                if (currentCityArray[i] === sortedList[j].currentCity && namesArray[i] === sortedList[j].nurseName){
                 newSortedList.push(sortedList[j])
                 break
                 }
