@@ -1,51 +1,56 @@
-.header-container {
-  display: inline;
-  height: 250px;
-  width: 90%;
-  margin-left: 90px;
-  margin-top: 15px;
-  text-align: center; 
+body {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(175, 241, 237);
 }
-.banner {
-  height : 250px;
-  width: 90%;
-  position: relative;
-  margin-top: 15px;
-  border-radius: 8px;
-  margin-left: auto;
-  margin-right: auto;
-  content: url('/img/rainbowSky.jpg');
+
+header {
+  height: 300px;
+  width: 1300px;
+  margin: 0 auto;
+  background-image:url('/img/header5.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .logo {
-  height: 200px;
+  height: 120px;
   width: auto;
-  padding-top: 25px;
+  padding: 25px;
   opacity: .9;
-  position: absolute;
   top: 10px;
   left: 50px;
   transform: rotate(-25deg);
 } 
-body {
-  background-color: #a4f1fc;
-}
 
 nav {
   display: flex;
   justify-content: center;
 }
 ul{
-  width: 900px;
+  width: 1300px;
   display: flex;
   justify-content: space-evenly;
+  background-color: rgba(41, 241, 195,0.6);
+}
+ul:hover{
+  background-color: rgba(41, 241, 195,0.9);
 }
 li {
   display: inline;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: 24px;
   text-transform: uppercase;
   font-family: sans-serif;
-  
+  font-weight: bold;
+  padding: 10px;
+}
+.navigation {
+  text-decoration: none;
+}
+
+main {
+  width: 1300px;
+  margin: 0 auto;
 }
 
 h1{
@@ -88,7 +93,7 @@ p {
   transition: all 1s ease-in-out;
   width: 100%;
   border-radius: 10px;
-  border: thick black solid;
+  border: thick rgb(41, 54, 125) solid;
   display: flex;
 }
 .card:hover {
@@ -102,12 +107,21 @@ p {
 }
 .card .back {
   transform: rotateY(180deg);
-  background-color: #A6C3CE;
+  background-color: rgba(41, 241, 195);
+}
+.connect {
+  margin-top: 140px;
+  margin-left: 10px;
+}
+.authors-social{
+  height: 30px;
 }
 
 footer {
   display: flex;
   justify-content: center;
+  width: 1300px;
+  margin: 0 auto;
 }
 footer img{
   margin: 10px;
