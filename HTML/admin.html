@@ -1,31 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/CSS/reset.css">
+    <link rel="stylesheet" href="/CSS/admin.css">
   </head>
   <body>
-
-    
-    <section>
-      <table>
-        <tbody id="table-body"></tbody>
-      </table>
-    </section>
-    
-    <select id="selectors">
-      <option value="name">Name</option>
-      <option value="title">title</option>
-      <option value="email">Email</option>
-      <option value="education">Education</option>
-      <option value="cityOrigin">City of Origin</option>
-      <option value="currentCity">Current City</option>
-    </select>
-    <button id="button">sort</button>
-
-
-
+    <header class="header">
+      <div class="header-container">
+        <img class="banner"> 
+        <img class="logo" src="/img/nurse logo.png" alt=""> 
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/HTML/index.html">Home</a></li>
+          <li><a href="/HTML/registration.html">Registration</a></li>
+          <li><a href="/HTML/admin.html">Administration</a></li>
+          <li><a href="/HTML/about_us.html">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class ="center">
+        <h1>Current Members List</h1>
+      </section>
+      <section class ="center" id="scrollit">
+        <table class="styled-table">
+          <tbody id="table-body"></tbody>
+        </table>
+    </main>
+    <footer>
+      <div>
+        <a href="facebook placeholder"><img src="/img/FB.png" alt="facebook icon" class="social"/></a>
+        <a href="instagram placeholder"><img src="/img/IG.png" alt="instagram icon" class="social"/></a>
+        <a href="twitter placeholder"><img src="/img/TW.png" alt="twitter icon" class="social"/></a>
+        <a href="LinkedIn placeholder"><img src="/img/LI.png" alt="LinkedIn icon" class="social"/></a>
+      </div>
+    </footer> 
   </body>
-
   <script src= "/JS/toolkit.js"></script>
   <script src = "/JS/admin.js"></script>
-
 </html>
