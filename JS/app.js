@@ -58,7 +58,7 @@ for (var j=0; j < register.members.length; j++) {
     console.log(register)
     storeDataKit("Nurse Members List", register)
 
-    alert("CONGRATS NEW FANCY KAT")
+    alert("Congratulations you are the official registered with the Philippines National Nursing Association")
 
     formElement.reset()   // Keeper in reset
 })

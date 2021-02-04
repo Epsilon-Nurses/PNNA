@@ -59,6 +59,13 @@ var LanguageKitten = function() {
 }
 var languageKit = new LanguageKitten() // Creating LanguageKit
 
+var SecurityKitten = function(admin, password) {
+    this.admin = admin
+    this.password = password
+    }
+
+
+
 
 ///// Converts Objects to us DOM Method
 function tableHeader(kitten) {
