@@ -134,7 +134,7 @@ function retrieveDataKit(categoryName) { // categoryName is the List Name in loc
 
 ///// Membership Constructor
 var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, currentCity) {
-    this.objectInfo = ['Name', 'Title', 'Email', 'City of Origin', 'Occupation', 'Location', 'Current Orginzation']
+    this.objectInfo = ['Name', 'Title', 'Email', 'City of Origin', 'Occupation', 'Current Orginzation']
     this.nurseName = nurseName
     this.titles = titles
     this.email = email

@@ -1,71 +1,88 @@
+<!DOCTYPE html>
 <html>
-<head>
-
-
-</head>
-
-<body>
-<main>
-<form id="registration-form">
-  <fieldset>
-    <div>
-      <label>Name
-        <input type="string" name="nurseName" required>
-      </label>
-    </div>
-    <div>
-      <label>Title
-        <select name="titles">
-          <option value="DR">DR</option>
-          <option value="CNA">CNA</option>
-            <option value="LPN">LPN/LVN</option>
-            <option value="RN">RN</option>
-            <option value="NP">NP</option>
-            <option value="CNM">CNM</option>
-            <option value="CRNA">CRNW</option>
-            <option value="CNM">CNM</option>
-            <option value="CRNA">CRNA</option>
-            <option value="DNP">DNP</option>
-          </select>
-      </label>
-    </div>
-
-    <div>
-      <label>Email
-        <input type="email" name="email" required>
-      </label>
-    </div>
-    <div>
-      <label>City of Origin
-        <input type="text" name="cityOfOrg">
-      </label>
-    </div>
-    <div>
-      <label>Certifications & Job Skills
-        <input type="text" name="certsJobsSkills">
-      </label>
-    </div>
-    <div>
-      <label>Current Organization
-        <input type="text" name="currentOrg">
-      </label>
-    </div>
-    <div>
-      <button type="submit">Submit</button>
-    </div>
-  </fieldset>
-</form>
-
-
-
-
-
-
-       
+  <head>
+    <link rel="stylesheet" href="/CSS/reset.css">
+    <link rel="stylesheet" href="/CSS/registration.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <img class="banner"> 
+        <img class="logo" src="/img/nurse logo.png" alt=""> 
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/HTML/index.html">Home</a></li>
+          <li><a href="/HTML/registration.html">Registration</a></li>
+          <li><a href="/HTML/admin.html">Administration</a></li>
+          <li><a href="/HTML/about_us.html">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class = "form"> 
+        <p>Become one of our members! Simply enter your information below:</p>
+        <form id="registration-form">
+          <fieldset>
+            <div>
+              <label>Name *
+                <input type="string" name="nurseName" required>
+              </label>
+            </div>
+            <div>
+              <label>Title
+                <select name="titles">
+                  <option value="DR">DR</option>
+                  <option value="CNA">CNA</option>
+                    <option value="LPN">LPN/LVN</option>
+                    <option value="RN">RN</option>
+                    <option value="NP">NP</option>
+                    <option value="CNM">CNM</option>
+                    <option value="CRNA">CRNW</option>
+                    <option value="CNM">CNM</option>
+                    <option value="CRNA">CRNA</option>
+                    <option value="DNP">DNP</option>
+                  </select>
+              </label>
+            </div>
+            <div>
+              <label>Email *
+                <input type="email" name="email" required>
+              </label>
+            </div>
+            <div>
+              <label>City of Origin
+                <input type="text" name="cityOfOrg">
+              </label>
+            </div>
+            <div>
+              <label>Certifications & Job Skills
+                <input type="text" name="certsJobsSkills">
+              </label>
+            </div>
+            <div>
+              <label>Current Organization
+                <input type="text" name="currentOrg">
+              </label>
+            </div>
+            <div>
+              <button type="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
     </main>
-    <script src= "/JS/toolkit.js"></script>
-  <script src = "/JS/app.js"></script> 
-</body>
+    <footer>
+      <div>
+        <a href="facebook placeholder"><img src="/img/FB.png" alt="facebook icon" class="social"/></a>
+        <a href="instagram placeholder"><img src="/img/IG.png" alt="instagram icon" class="social"/></a>
+        <a href="twitter placeholder"><img src="/img/TW.png" alt="twitter icon" class="social"/></a>
+        <a href="LinkedIn placeholder"><img src="/img/LI.png" alt="LinkedIn icon" class="social"/></a>
+      </div>
+    </footer> 
+      <script src= "/JS/toolkit.js"></script>
+      <script src = "/JS/app.js"></script> 
+  </body>
 </html>
 
 
