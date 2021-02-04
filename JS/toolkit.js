@@ -3,14 +3,14 @@
     //////////////////////// OBJECT BUILDER BEWARE OF FLYING OJECTS ////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
             ////////// WARNING ////////// Global Maker ////////// WARNING ////////// 
-//                         var FancyKat = function(filePath, name) {
-//                         this.filePath = filePath;
-//                         this.name = name;
+                            ///// FancyKat stores your objects for your
+                            var FancyKat = function (members) { // Connects to Prototype
+                            this.members = members
+                            }; // We only call FancyKat for commands
 //                         // Product.allProducts.push(this);
 //                       }; // We only call FancyKat for commands
 // ////////////////////////////////////////////////////////////////////////////////////////////////
 //     ///////////////////////////////////////////////////////////////////////////////////////
-//                              var fancyKat = new FancyKat([]) 
                               //                    /\__/\                      
                              // This is Fancy Kat \( ",," )/ General options
                             // are made to into this and stored as object array to be
@@ -34,20 +34,10 @@
 //      -> One Special I want to give to a Kitten Constructor is to build each div creates ids set them into the html and set values
 //      -> Sometimes Kittens put div -> section -> table -> tr -> td
 // 
-//
 // - So why do we build Fancy Kat we are building Fancy Kat to make our moving parts Fancy, essenetially it is Array in an Array, each array
 // inside FancyKat has an objects is the list of variable given functions so past 3D dimensional arrays from there are hard to track
 // when in doublt make a Kitten and hand him to FancyKat
 // Element Kitten Constructor
-
-
-///// Global Variables
-
-///// FancyKat stores your objects for you
-var FancyKat = function (members) { // Connects to Prototype
-    this.members = members
-
-  }; // We only call FancyKat for commands
 
 ///// Stores in FancyKat for local storage
 FancyKat.prototype.storeMembership = function(object) {
@@ -61,15 +51,19 @@ var LanguageKitten = function() {
     this.tableId = "table-body"
     this.tableBody= 'tbody'
     this.tableRow = "tr"
+    this.tableHead = "thead"
     this.heading = "th"
     this.tableData = "td"
+    this.table = "styled-table"
+    
 }
 var languageKit = new LanguageKitten() // Creating LanguageKit
 
 
 ///// Converts Objects to us DOM Method
 function tableHeader(kitten) {
-    var tableBody = document.getElementById(languageKit.tableId);
+    var table = document.getElementById(languageKit.table)
+    var tableHead = document.createElement(languageKit.tableHead);
     var tableRow = document.createElement(languageKit.tableRow)
 
 
@@ -79,35 +73,43 @@ function tableHeader(kitten) {
         heading.textContent = kitten.objectInfo[i]
         heading.setAttribute('id', kitten.objectInfo[i])
         tableRow.appendChild(heading)
+        console.log(tableRow)
     }
-        tableBody.appendChild(tableRow);
+    tableHead.appendChild(tableRow)
+    table.appendChild(tableHead)
+
 }
 
 ///// Table Data for Members
 function tableData(kitten) {
-    var tableBody = document.getElementById(languageKit.tableId);
-    var tableRow = document.createElement(languageKit.tableRow)
+    var tableBody = document.createElement(languageKit.tableBody)
+    var table = document.getElementById(languageKit.table)
 
+        for (var i=0; i < kitten.length; i++) {
+                var tableRow = document.createElement(languageKit.tableRow)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = kitten.nurseName
+                tableData.textContent = kitten[i].nurseName
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = kitten.titles
+                tableData.textContent = kitten[i].titles
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = kitten.email
+                tableData.textContent = kitten[i].email
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = kitten.cityOrgin
+                tableData.textContent = kitten[i].cityOrgin
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = kitten.education
+                tableData.textContent = kitten[i].education
                 tableRow.appendChild(tableData)
                 var tableData = document.createElement(languageKit.tableData)
-                tableData.textContent = kitten.currentCity
+                tableData.textContent = kitten[i].currentCity
                 tableRow.appendChild(tableData)
-    
-    tableBody.appendChild(tableRow);
+            
+                tableBody.appendChild(tableRow) 
+        
+        }
+        table.appendChild(tableBody)
 
 }
 
@@ -144,7 +146,7 @@ var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, cur
     this.currentCity = currentCity
 }
 ///// For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
-    function changeInputType(oldObject, oType) {
+function changeInputType(oldObject, oType) {
       var newObject = document.createElement('input');
       newObject.type = oType;
       if(oldObject.size) newObject.size = oldObject.size; // How many times we wanna do this
@@ -157,7 +159,7 @@ var MemberShipKit = function(nurseName, titles, email, cityOrgin, education, cur
     }
 
 ////// Function to Display Images
-   function displayList(elementID, textToShow) {      // Interacts with function chartGenerator
+function displayList(elementID, textToShow) {      // Interacts with function chartGenerator
     var requiredId = document.getElementById(elementID)
     var element = document.createElement('button')
     
@@ -195,8 +197,8 @@ function sortNames() {
 ////// Function to sort Object Titles
 function sortTitles() {
 var sortedList = [] // Objects
+var titlesArray = []
 var namesArray = []  // Names for Identifier
-var titlesArray = []  
 var newSortedList = []
 ///// Initializer
 var membersList = retrieveDataKit("Nurse Members List")
@@ -204,10 +206,11 @@ var membersList = retrieveDataKit("Nurse Members List")
     for (var i= 0; i < membersList.members.length; i++){
         var nurse = membersList.members[i]
         sortedList.push(nurse)
-        namesArray.push(nurse.nurseName)
         titlesArray.push(nurse.titles)
-    }
+        namesArray.push(nurse.nurseName)
 
+    }
+    namesArray.sort()
     titlesArray.sort()
     for (var i=0; i < titlesArray.length; i++){
     
@@ -223,17 +226,15 @@ var membersList = retrieveDataKit("Nurse Members List")
 
 ////// Function to sort Object Names
 function sortEmail() {
-var sortedList = [] // Objects
-var namesArray = []  // Names for Identifier
-var emailArray = [] 
-var newSortedList = []
+    var sortedList = [] // Objects
+    var emailArray = [] 
+    var newSortedList = []
 ///// Initializer
 var membersList = retrieveDataKit("Nurse Members List")
         console.log(membersList.members, "From Storage")
     for (var i= 0; i < membersList.members.length; i++){
         var nurse = membersList.members[i]
         sortedList.push(nurse)
-        namesArray.push(nurse.nurseName)
         emailArray.push(nurse.email)
     }
 
@@ -241,7 +242,7 @@ var membersList = retrieveDataKit("Nurse Members List")
     for (var i=0; i < emailArray.length; i++){
     
         for (var j=0; j < sortedList.length; j++) {
-            if (emailArray[i] === sortedList[j].email && namesArray[i] === sortedList[j].nurseName){
+            if (emailArray[i] === sortedList[j].email){
               newSortedList.push(sortedList[j])
               break
             }
@@ -253,24 +254,25 @@ var membersList = retrieveDataKit("Nurse Members List")
 ////// Function to sort Object Names
 function sortCityOrigin() {
 var sortedList = [] // Objects
-var namesArray = []  // Names for Identifier
 var cityOrginArray = [] 
 var newSortedList = []
+var namesArray = []  // Names for Identifier
 ///// Initializer
 var membersList = retrieveDataKit("Nurse Members List")
         console.log(membersList.members, "From Storage")
     for (var i= 0; i < membersList.members.length; i++){
         var nurse = membersList.members[i]
         sortedList.push(nurse)
-        namesArray.push(nurse.nurseName)
         cityOrginArray.push(nurse.cityOrgin)
-    }
+        namesArray.push(nurse.nurseName)
 
+    }
+    namesArray.sort()
     cityOrginArray.sort()
     for (var i=0; i < cityOrginArray.length; i++){
     
         for (var j=0; j < sortedList.length; j++) {
-            if (cityOrginArray[i] === sortedList[j].cityOrgin && namesArray[i] === sortedList[j].nurseName){
+            if (cityOrginArray[i] === sortedList[j].cityOrgin && namesArray[i] === sortedList[j].nurseName) {
               newSortedList.push(sortedList[j])
               break
             }
@@ -282,24 +284,25 @@ var membersList = retrieveDataKit("Nurse Members List")
 ////// Function to sort Object Names
 function sortEducation() {
     var sortedList = [] // Objects
-    var namesArray = []  // Names for Identifier
     var educationArray = []
     var newSortedList = []
+    var namesArray = []  // Names for Identifier
     ///// Initializer
     var membersList = retrieveDataKit("Nurse Members List")
             console.log(membersList.members, "From Storage")
         for (var i= 0; i < membersList.members.length; i++){
             var nurse = membersList.members[i]
             sortedList.push(nurse)
-            namesArray.push(nurse.nurseName)
             educationArray.push(nurse.education)
-        }
+            namesArray.push(nurse.nurseName)
 
+        }
+        namesArray.sort()
         educationArray.sort()
         for (var i=0; i < educationArray.length; i++){
         
             for (var j=0; j < sortedList.length; j++) {
-                if (educationArray[i] === sortedList[j].education && namesArray[i] === sortedList[j].nurseName){
+                if (educationArray[i] === sortedList[j].education){
                 newSortedList.push(sortedList[j])
                 break
                 }
@@ -311,7 +314,6 @@ function sortEducation() {
 ////// Function to sort Object Names
 function sortcurrentCity() {
     var sortedList = [] // Objects
-    var namesArray = []  // Names for Identifier
     var currentCityArray = [] 
     var newSortedList = []
     ///// Initializer
@@ -320,10 +322,9 @@ function sortcurrentCity() {
         for (var i= 0; i < membersList.members.length; i++){
             var nurse = membersList.members[i]
             sortedList.push(nurse)
-            namesArray.push(nurse.nurseName)
             currentCityArray.push(nurse.currentCity)
         }
-
+        namesArray.sort()
         currentCityArray.sort()
         for (var i=0; i < currentCityArray.length; i++){
         
@@ -337,6 +338,16 @@ function sortcurrentCity() {
         return newSortedList
 }
 
+///// Retrieve Membership Function
+function membershipCacheRetrieval(objectArray) {
+    var recenetMembers = retrieveDataKit("Nurse Members List")
+        console.log(recenetMembers, "From Storage")
+    for (var i= 0; i < recenetMembers.members.length; i++){
+        var membersList = recenetMembers.members[i]
+        objectArray.storeMembership(membersList)
+    }
+    return objectArray
+}
 
 // ///// Confirmation button event
 // var confirmMsg = document.getElementById('confirmation')
@@ -346,7 +357,18 @@ function sortcurrentCity() {
 // })
 
 
-
+// // For input elements, the size attribute specifies the visible width, in characters, of an <input> element.
+//     function changeInputType(oldObject, oType) {
+//       var newObject = document.createElement('input');
+//       newObject.type = oType;
+//       if(oldObject.size) newObject.size = oldObject.size; // How many times we wanna do this
+//       if(oldObject.value) newObject.value = oldObject.value; // What's the new Value
+//       if(oldObject.name) newObject.name = oldObject.name; // What's the new name
+//       if(oldObject.id) newObject.id = oldObject.id; // New id
+//       if(oldObject.className) newObject.className = oldObject.className; // New Class
+//       oldObject.parentNode.replaceChild(newObject,oldObject); // Changes new to Old and 
+//       return newObject;
+//     }
 
 
 
