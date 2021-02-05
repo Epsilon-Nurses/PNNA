@@ -8,7 +8,7 @@ header {
   height: 300px;
   width: 1300px;
   margin: 0 auto;
-  background-image: url('/img/header5.jpg');
+  background-image: url('img/header5.jpg');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -84,7 +84,7 @@ h1 {
 
 .caduceus {
   position: absolute;
-  content: url("/img/cross.png");
+  content: url("img/cross.png");
   height: 150px;
   width: auto;
   bottom: 375px;
@@ -94,7 +94,7 @@ h1 {
 }
 .caduceus2 {
   position: absolute;
-  content: url("/img/cross.png"); 
+  content: url("img/cross.png"); 
   height: 150px;
   width: auto;
   bottom: 375px;
