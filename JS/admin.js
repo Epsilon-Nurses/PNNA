@@ -1,27 +1,18 @@
 "use strict"
 
 ///// Credentials
-
 var adminUser = prompt("Please input USERNAME")
 var passwordUser = prompt("Please input PASSWORD")
 var securityKit = new SecurityKitten(adminUser, passwordUser)
-
-
     if (securityKit.admin === 'admin' && securityKit.password === "FANCYKAT") {
-            alert('Welcome back ' + securityKit.admin +'!')
+        alert('Welcome back ' + securityKit.admin +'!')
     }
-
-
     while (securityKit.admin !== "admin" || securityKit.password !== "FANCYKAT") {
         alert("Incorrect Credentials")
         var adminUser = prompt("Please input USERNAME")
         var passwordUser = prompt("Please input PASSWORD")
         securityKit = new SecurityKitten(adminUser, passwordUser)
     }
-
-
-
-
 
 var register = []
 ///// Initializer MUST BE AT THE TOP TO RENDER ANYTHING
@@ -33,7 +24,6 @@ var membersList = retrieveDataKit("Nurse Members List")
 tableHeader(register[0])
 tableData(register)
 
-
 var headSortName = document.getElementById("Name");
 var headSortTitle = document.getElementById("Title");
 var headSortEmail = document.getElementById("Email");
@@ -41,16 +31,10 @@ var headSortCityOrigin = document.getElementById("City of Origin");
 var headSortEducation = document.getElementById("Occupation");
 var headSortCurrentCity = document.getElementById("Current Orginzation");
 
-
-
 ///// Button Click Event
 headSortName.addEventListener("click",function(event) {
     refresh_table('styled-table')
-
     var newSortedList = sortNames()
-
-    console.log(newSortedList)
-        
     tableHeader(newSortedList[0])
     tableData(newSortedList)
 })
@@ -58,11 +42,7 @@ headSortName.addEventListener("click",function(event) {
 ///// Button Click Event
 headSortTitle.addEventListener("click",function(event) {
     refresh_table('styled-table')
-
     var newSortedList = sortTitles()
-
-    console.log(newSortedList)
-        
     tableHeader(newSortedList[0])
     tableData(newSortedList)
     
@@ -71,12 +51,7 @@ headSortTitle.addEventListener("click",function(event) {
 ///// Button Click Event
 headSortEmail.addEventListener("click",function(event) {
     refresh_table('styled-table')
-
-    var newSortedList = sortEmail()
-
-
-    console.log(newSortedList)
-        
+    var newSortedList = sortEmail()   
     tableHeader(newSortedList[0])
     tableData(newSortedList)
 })
@@ -85,13 +60,7 @@ headSortEmail.addEventListener("click",function(event) {
 headSortCityOrigin.addEventListener("click",function(event) {
     event.preventDefault()
     refresh_table('styled-table')
-
-
     var newSortedList = sortCityOrigin()
-
-
-    console.log(newSortedList)
-        
     tableHeader(newSortedList[0])
     tableData(newSortedList)
 })
@@ -100,12 +69,7 @@ headSortCityOrigin.addEventListener("click",function(event) {
 headSortEducation.addEventListener("click",function(event) {
     event.preventDefault()
     refresh_table('styled-table')
-
-
-    var newSortedList = sortEducation()
-
-    console.log(newSortedList)
-        
+    var newSortedList = sortEducation()   
     tableHeader(newSortedList[0])
     tableData(newSortedList)
 })
@@ -114,17 +78,7 @@ headSortEducation.addEventListener("click",function(event) {
 headSortCurrentCity.addEventListener("click",function(event) {
     event.preventDefault()
     refresh_table('styled-table')
-
-
-  var newSortedList = sortcurrentCity()
-
-    console.log(newSortedList)
-        
+    var newSortedList = sortcurrentCity()   
     tableHeader(newSortedList[0])
     tableData(newSortedList)
 })
-
-
-
-
-
