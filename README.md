@@ -78,3 +78,16 @@
 ## Admin Domain Modeling
 
 ![admin page domain model](img/admin_domain.png)
+
+## Source
+* [Icon Finder](https://www.iconfinder.com/icons/5282544/camera_instagram_social_media_social_network_instagram_logo_icon)
+* [HTML Images](https://www.w3schools.com/html/html_images.asp)
+* [Transitions & Animations](https://learn.shayhowe.com/advanced-html-css/transitions-animations/)
+* [add scroll bar to table body](https://stackoverflow.com/questions/17450861/add-scroll-bar-to-table-body)
+* [Creating beautiful HTML tables with CSS](https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l)
+* [How can I center a div within a div?](https://stackoverflow.com/questions/15376634/how-can-i-center-a-div-within-another-div)
+* [Sunset Gradient](https://www.eggradients.com/category/sunset-gradient)
+* [Stock Photos](https://www.pexels.com/photo/aerial-view-of-a-shore-and-body-of-water-584302/)
+* [Stock Photos](https://www.pexels.com/photo/green-mountain-in-the-middle-of-body-of-water-3739564/)
+* [The Target Attribute](https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/)
+* [Stock Photos](https://www.pexels.com/photo/mountain-and-body-of-water-2798477/)
